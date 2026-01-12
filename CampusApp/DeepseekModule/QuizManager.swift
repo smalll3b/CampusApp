@@ -5,6 +5,8 @@
 //  Created by itst on 25/11/2025.
 //
 import Foundation
+import Combine
+
 
 class QuizManager: ObservableObject {
     @Published var currentQuestions: [QuizQuestion]?

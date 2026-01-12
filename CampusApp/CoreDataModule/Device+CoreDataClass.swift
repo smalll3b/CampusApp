@@ -6,10 +6,8 @@
 //
 //
 
-public import Foundation
-public import CoreData
-
-public typealias DeviceCoreDataClassSet = NSSet
+import Foundation
+import CoreData
 
 @objc(Device)
 public class Device: NSManagedObject {

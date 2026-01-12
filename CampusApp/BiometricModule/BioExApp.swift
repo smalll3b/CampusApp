@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-@main
-struct BioExApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+struct BioExApp: View {
+    var body: some View {
+            BiometricView()
         }
     }
-}

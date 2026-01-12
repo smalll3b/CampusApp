@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-@main
-struct NavigationEXApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+struct NavigationEXApp: View {
+    var body: some View {
+            NavigationExampleView()
         }
     }
-}

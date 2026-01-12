@@ -6,15 +6,13 @@
 //
 
 import SwiftUI
+import CoreData
 
-@main
-struct StorageEXApp: App {
+struct StorageEXApp: View {
     let persistenceController = PersistenceController.shared
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+    var body: some View {
+            StorageView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
-}

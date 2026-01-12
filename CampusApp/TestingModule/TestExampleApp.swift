@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-@main
-struct TestExampleApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+struct TestExampleApp: View {
+    var body: some View {
+            TestExampleView()
         }
     }
-}

@@ -6,11 +6,9 @@
 //
 //
 
-public import Foundation
-public import CoreData
+import Foundation
+import CoreData
 
-
-public typealias DeviceCoreDataPropertiesSet = NSSet
 
 extension Device {
 
@@ -20,11 +18,12 @@ extension Device {
 
     @NSManaged public var company: String?
     @NSManaged public var name: String?
-    @NSManaged public var timestamp: Date?
     @NSManaged public var version: String?
+    @NSManaged public var timestamp: Date?
 
 }
 
 extension Device : Identifiable {
 
 }
+

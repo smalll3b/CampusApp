@@ -1,5 +1,5 @@
 //
-//  AddDeviceView.swift
+//  DetailView.swift
 //  StorageEX
 //
 //  Created by itst on 18/11/2025.
@@ -8,15 +8,24 @@
 import SwiftUI
 import CoreData
 
-struct AddDeviceView: View {
+struct StorageDetailView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode
     
-    @Binding var showingSheet : Bool
-    
+    var device : Device
     @State var name : String = ""
     @State var version : String = ""
     @State var company : String = ""
+    
+    fileprivate func saveAndBack() {
+        device.name = name
+        device.company = company
+        device.version = version
+        device.timestamp = Date()
+        try? viewContext.save()
+        self.presentationMode.wrappedValue.dismiss()
+    }
     
     var body: some View {
         VStack {
@@ -29,31 +38,17 @@ struct AddDeviceView: View {
                 .padding()
             HStack {
                 Button(action: {
-                    createDevice()
+                    saveAndBack()
                 }, label: {
                     Text("Save")
                 })
-                Button(action: {
-                    showingSheet = false
-                }, label: {
-                    Text("Cancel")
-                })
             }
             Spacer()
+        }.onAppear {
+            name = device.name!
+            version = device.version!
+            company = device.company!
         }
-    }
-    
-    func createDevice() {
-        let device = Device(context: viewContext)
-        device.name = name
-        device.company = company
-        device.version = version
-        device.timestamp = Date()
-        try? viewContext.save()
-        self.name = ""
-        self.version = ""
-        self.company = ""
-        showingSheet = false
     }
 }
 

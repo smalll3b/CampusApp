@@ -4,7 +4,9 @@
 //
 //  Created by itst on 14/10/2025.
 //
+
 import SwiftUI
+
 struct GameView : View {
     @Binding var isShowGame : Bool
     @State var userInput  = "✊"
