@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SpeechView: View {
     var body: some View {
         VStack {
-            GameView()
+            GameView1()
         }
         .padding()
     }

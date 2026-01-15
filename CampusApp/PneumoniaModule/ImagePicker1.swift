@@ -8,16 +8,16 @@
 import SwiftUI
 import UIKit
 
-struct ImagePicker: UIViewControllerRepresentable {
+struct ImagePicker1: UIViewControllerRepresentable {
     @Binding var uiImage: UIImage?
     @Binding var isPresenting: Bool
     @Binding var sourceType: UIImagePickerController.SourceType
 
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = sourceType
-        imagePicker.delegate = context.coordinator
-        return imagePicker
+        let imagePicker1 = UIImagePickerController()
+        imagePicker1.sourceType = sourceType
+        imagePicker1.delegate = context.coordinator
+        return imagePicker1
     }
 
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
@@ -29,7 +29,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        let parent: ImagePicker
+        let parent: ImagePicker1
 
         func imagePickerController(_ picker: UIImagePickerController,
                                    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -41,7 +41,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             parent.isPresenting = false
         }
 
-        init(_ parent: ImagePicker) {
+        init(_ parent: ImagePicker1) {
             self.parent = parent
         }
     }

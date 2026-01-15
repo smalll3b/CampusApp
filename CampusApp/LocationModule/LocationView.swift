@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LocationView: View {
     var body: some View {
         TabView {
             SpotsView()

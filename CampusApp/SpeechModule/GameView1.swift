@@ -7,8 +7,9 @@
 
 import SwiftUI
 import Combine
+import AVFAudio
 
-struct GameView: View {
+struct GameView1: View {
     @StateObject private var speechRecognizer = SpeechRecognizer()
     @State private var message: String = "Say 'left', 'right', 'up' or 'down'"
     @State private var playerPositionX: CGFloat = 0.0

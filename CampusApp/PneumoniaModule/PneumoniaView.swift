@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PneumoniaView: View {
     @State var isPresenting: Bool = false
     @State var uiImage: UIImage?
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    @ObservedObject var classifier: ImageClassifier
+    @ObservedObject var classifier: ImageClassifier1
 
     var body: some View {
         VStack {
@@ -74,7 +74,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isPresenting) {
-            ImagePicker(uiImage: $uiImage,
+            ImagePicker1(uiImage: $uiImage,
                         isPresenting: $isPresenting,
                         sourceType: $sourceType)
                 .onDisappear {
@@ -87,8 +87,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PneumoniaView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(classifier: ImageClassifier())
+        PneumoniaView(classifier: ImageClassifier1())
     }
 }

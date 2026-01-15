@@ -10,29 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            StorageView()
-                .tabItem { Label("CoreData", systemImage: "archivebox") }
             
             BiometricView()
                 .tabItem { Label("Biometric", systemImage: "faceid") }
             
-            ContactView()
-                .tabItem { Label("Web API", systemImage: "person.3") }
+            StorageView()
+                .tabItem { Label("CoreData", systemImage: "archivebox") }
             
             LocationView()
                 .tabItem { Label("Location", systemImage: "map") }
-            
-            SpeechView()
-                .tabItem { Label("Speech", systemImage: "mic") }
-            
+        
             DeepseekView()
                 .tabItem { Label("LLM", systemImage: "bubble.left.and.bubble.right") }
             
-            MLView()
-                .tabItem { Label("CoreML", systemImage: "camera") }
+            MLView(classifier: ImageClassifier())
+                .tabItem { Label("SeeFoodML", systemImage: "camera") }
             
-            TestExampleView()
-                .tabItem { Label("Testing", systemImage: "checkmark.seal") }
+            PneumoniaView(classifier: ImageClassifier1())
+                .tabItem { Label("PneumoniaML", systemImage: "camera") }
             
             NavigationExampleView()
                 .tabItem { Label("Navigation", systemImage: "list.bullet") }
@@ -42,7 +37,12 @@ struct ContentView: View {
             
             PSSAppView()
                 .tabItem { Label("PSSApp", systemImage: "list.bullet") }
-
+            
+            SpeechView()
+                .tabItem { Label("Speech", systemImage: "mic") }
+            
+            TestExampleView()
+                .tabItem { Label("Testing", systemImage: "checkmark.seal") }
         }
     }
 }

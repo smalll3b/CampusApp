@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ImageClassifier: ObservableObject {
+class ImageClassifier1: ObservableObject {
     @Published private var classifier = PneumoniaClassifier()
 
     var imageClass: String? {
